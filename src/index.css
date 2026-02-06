@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 font-sans antialiased;
+}
+
+img {
+  max-width: 100%;
+}
+
+.glass {
+  @apply bg-white/10 border border-white/20 backdrop-blur-md;
+  box-shadow: 0 20px 60px -30px rgba(15, 23, 42, 0.85);
+}
+
+.glow-link {
+  @apply relative transition-all duration-300;
+}
+
+.glow-link::after {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(2, 195, 154, 0.25), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.glow-link:hover::after {
+  opacity: 1;
+}
+
+.magnetic {
+  will-change: transform;
+}
+
+.grain {
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04) 0, transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.05) 0, transparent 30%),
+    radial-gradient(circle at 0% 80%, rgba(255, 255, 255, 0.05) 0, transparent 40%);
+}
+
+.hero-warm {
+  background: linear-gradient(135deg, #33d6af 0%, #02c39a 45%, #029c7b 100%);
+}
+
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='320' height='320' viewBox='0 0 320 320' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.18'%3E%3Cpath d='M62 74c10-14 34-22 52-14 16 8 18 32 0 42-18 10-46 0-52-28z' stroke='white' stroke-width='2'/%3E%3Cpath d='M210 40h36c8 0 14 6 14 14v28c0 8-6 14-14 14h-36c-8 0-14-6-14-14V54c0-8 6-14 14-14z' stroke='white' stroke-width='2'/%3E%3Cpath d='M92 184c0-18 14-32 32-32h18c18 0 32 14 32 32v40c0 18-14 32-32 32h-18c-18 0-32-14-32-32v-40z' stroke='white' stroke-width='2'/%3E%3Cpath d='M216 166h26c16 0 28 12 28 28s-12 28-28 28h-26' stroke='white' stroke-width='2'/%3E%3Cpath d='M38 230h46' stroke='white' stroke-width='2'/%3E%3Cpath d='M38 250h26' stroke='white' stroke-width='2'/%3E%3Cpath d='M248 236c10 0 18 8 18 18s-8 18-18 18-18-8-18-18 8-18 18-18z' stroke='white' stroke-width='2'/%3E%3Cpath d='M128 66h12v-12h12v12h12v12h-12v12h-12V78h-12V66z' fill='white'/%3E%3Cpath d='M210 114h12v-12h12v12h12v12h-12v12h-12v-12h-12v-12z' fill='white'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 360px 360px;
+  background-repeat: repeat;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid #02c39a;
+  background: #fff;
+  box-shadow: 0 0 0 6px rgba(2, 195, 154, 0.12);
+}
