@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 const Reviews = () => {
     const sectionRef = useRef<HTMLElement>(null)
     const [activeIndex, setActiveIndex] = useState(0)
-    const intervalRef = useRef<NodeJS.Timeout | null>(null)
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
     // Auto-carousel every 2 seconds
     useEffect(() => {
@@ -145,8 +145,8 @@ const Reviews = () => {
                             key={index}
                             onClick={() => goToSlide(index)}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex
-                                    ? 'bg-primary-500 w-8'
-                                    : 'bg-primary-200 hover:bg-primary-300'
+                                ? 'bg-primary-500 w-8'
+                                : 'bg-primary-200 hover:bg-primary-300'
                                 }`}
                         />
                     ))}
